@@ -4,3 +4,45 @@ body {
 	color: #006400;
 }
 
+header, footer {
+  background-color: #B8860B;
+}
+
+h1,h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+footer { 
+	padding: 10px 0; 
+}
+
+.big-message {
+	font-family: 'Love Ya Like A Sister', cursive;
+	text-align: center;
+	color: white;
+	text-shadow: 0 0 30px black;
+}
+.big-message h1 {
+	font-size: 72pt;
+	font-weight: normal;
+	margin: 0;
+}
+.big-message a {
+	text-decoration: none;
+	color: white;
+	border-bottom: 1px solid white;
+}
+.big-message a:hover {
+	color: #f44b42;
+}
+.big-message .subtitle {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 24pt;
+}
+.stand-alone { 
+	display: block; 
+	font-size: 10pt;
+	margin-bottom: 5px;
+}
+
+
