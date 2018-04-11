@@ -13,13 +13,61 @@ h1,h2 {
 }
 
 footer { 
-	padding: 10px 0; 
+	padding: 10px 0;
+}
+
+a {
+	text-decoration: none;
+	color: rgba(165,108,33,1);
+	border-bottom: 1px solid rgba(165,108,33,1);
+}
+header a, footer a { 
+	color: #FFD700; 
+	border-bottom-color: #FFD700;
+}
+a:hover {
+	color: #f44b42;
+	border-bottom: 1px solid rgb(244, 75, 66);
+}
+
+.lead { 
+	font-weight: bold; 
+	border-bottom: 1px solid #B8860B;
+	padding-bottom: 25px;
+}
+
+.right { 
+	float: right;
+	margin-left: 20px;
+}
+
+.photo-frame {
+	padding: 3px;
+	border: 1px solid #B8860B;
+}
+.photo-frame figcaption {
+	font-size: 10pt;
+	font-style: italic;
+	color: #006400;
+}
+
+.too-wide {
+	columns: 400px;
+	column-gap: 50px;
+	column-rule: 1px dotted #666666;
+}
+
+.too-wide2 {
+	margin: 0 auto;
+	text-align: center;
+	max-width: 600px;
+	margin-top: 35px;
 }
 
 .big-message {
-	font-family: 'Love Ya Like A Sister', cursive;
+	font-family: 'Playfair Display', serif;
 	text-align: center;
-	color: white;
+	color: White;
 	text-shadow: 0 0 30px black;
 }
 .big-message h1 {
@@ -29,20 +77,119 @@ footer {
 }
 .big-message a {
 	text-decoration: none;
-	color: white;
-	border-bottom: 1px solid white;
+	color: #006400;
+	border-bottom: 3px solid white;
 }
 .big-message a:hover {
-	color: #f44b42;
+	color: white;
 }
 .big-message .subtitle {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Playfair Display', serif;
 	font-size: 24pt;
 }
 .stand-alone { 
+	font-family: 'Montserrat', serif;
 	display: block; 
-	font-size: 10pt;
-	margin-bottom: 5px;
+	font-size: 12pt;
+	margin-bottom: 10px;
+}
+
+/*	Form controls
+	************************************** */
+.stand-alone + input { 
+	font-family: 'Montserrat', serif;
+	font-style: italic;
+	padding: 5px;
+	font-size: 9pt;
+}
+input[type="submit"] {
+	font-family: 'Montserrat', serif; 
+	padding: 5px;
+	font-size: 9pt;
 }
 
 
+/*	*******************************************
+	LAYOUT
+	******************************************* */
+.container {
+	margin: 0 auto;
+	width: 95%;
+	max-width: 1300px;
+}
+
+/*	Fixed positioning of the header/footer
+	************************************** */
+.persistent {
+	position: fixed;
+	left: 0;
+	width: 100%;
+}
+header.persistent { top: 0; }
+footer.persistent { bottom: 0; }
+
+/*	Styling of the Z-pattern page layout 
+	************************************** */
+.z-pattern { 
+	background-image: url(../images/background.jpg);
+	background-size: cover;
+	background-position: center;
+}
+.z-pattern header, .z-pattern footer { 
+	background-color: rgba(165,108,33,0.3);
+}
+.z-pattern header { box-shadow: 0 10px 50px 30px rgba(165,108,33,0.3); }
+.z-pattern footer { box-shadow: 0 -10px 50px 30px rgba(165,108,33,0.3); }
+
+/*	Styling of the four Z-pattern quadrants 
+	************************************** */
+.z-pattern .primary, 
+.z-pattern .strong, 
+.z-pattern .weak, 
+.z-pattern .terminal {
+	margin: 35px;
+}
+.primary, .weak { margin-left: 0; }
+.strong, .terminal { margin-right: 0; }
+
+.primary img {
+	background: radial-gradient(ellipse closest-side, rgba(255,255,255,1), rgba(255,255,255,0));
+	padding: 10px;
+}
+.primary img:hover {
+	background: radial-gradient(ellipse closest-side, rgba(244,75,66,1), rgba(255,255,255,0));
+}
+.primary a { border-bottom: none; }
+
+/*	Flex positioning of the four quadrants
+	************************************** */
+header .container, footer .container, .l-fpattern { 
+	display: flex;
+	justify-content: space-between;
+}
+.big-message, .primary, .strong { flex: 1 0 33%; }
+.strong { flex-shrink: 1; }
+
+.l-fpattern > *:first-child { margin-right: 25px; }
+.l-fpattern h2 { flex: 0 0 175px; }
+
+.l-fpattern {
+	margin-bottom: 65px;
+}
+
+.primary, .strong, .weak, .terminal { 
+	align-self: center;
+	color: white;
+	text-shadow: 0 0 10px black;
+}
+.strong, .terminal { text-align: right; }
+.terminal { font-size: 18pt; }
+
+/*	Positioning of the centered message
+	************************************** */
+.z-pattern main { 
+	display: flex; 
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
